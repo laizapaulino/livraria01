@@ -1,0 +1,40 @@
+<script>
+    alert("oi");
+        document.getElementById('descricao').innerHTML = "OOOO";
+    </script>
+<div class="content">
+    <div class="container pt-5 z-depth-3 #e0e0e0 grey lighten-2 ">
+        <div class="row  border border-outline-danger p-3 item">
+        <div class="col-md-12 mt-5">
+            <div class="container pt-5 caixa">
+                <a class="booktitle right z-depth-3" href="https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/{{isbn}}.01.LZZZZZZZ.jpg">
+                    <img src="https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/{{isbn}}.01.MZZZZZZZ.jpg">
+                </a>
+                <a class="btn waves-effect waves-light" routerLink="/add-carrinho/{{usuario}}/{{livro_descricao[0].ISBN}}">Adicionar ao carrinho</a>
+                <h4><p>{{livro_descricao[0].title}}</p></h4>
+                <p><strong>Autor(es):</strong> <span *ngFor="let aut of autores">{{aut.nameF}} {{aut.nameL}}</span></p>
+                <p><strong>ISBN:</strong> {{isbn}}</p>
+                
+                <p><strong>Publicado em:</strong> {{livro_descricao[0].pubdate}}</p>
+
+                <p><strong>Preço:</strong> ${{livro_descricao[0].price}}</p>
+                <p hidden=""><strong>Desconto:</strong> </p>
+
+                <p><strong>Editora:</strong> {{livro_descricao[0].publisher}}</p>
+                <p><strong>Numero de páginas:</strong>  {{livro_descricao[0].pages}}</p>
+                <p><strong>Edição:</strong> {{livro_descricao[0].edition}}</p>
+                <p><strong>Categorias:</strong> <span *ngFor="let cat of categorias"> {{cat.CategoryName}}  </span></p>
+<hr>
+                <p><strong>Descrição:</strong>
+                    <span id=descricao onload="inicio()">
+                       {{ livro_descricao[0].description}}
+                    </span>
+                </p>
+
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

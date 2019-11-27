@@ -1,0 +1,56 @@
+    <script>
+        // menu mobile
+        $(".button-collapse").sideNav();
+        $(document).ready(function () {
+            $('.parallax').parallax();
+        });
+        $('#dropdown').dropdown();
+        $('.dropdown-trigger').dropdown();
+        
+    </script>
+    <div class="navbar-block">
+        <nav class="z-depth-3 nav-extended #b0bec5 blue-grey lighten-3">
+            <div class="row">
+                <div class="col-md-3">    
+                    <div class="row">
+
+                        <div class="col">
+                            <a href="/home/{{usuario}}" class="brand-logo">
+                                <img src="../../../assets/img/logo.png">
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <form action="SearchBrowse.php" method="get">
+                        <input type="text" placeholder="Pesquisar" style="width: 200px;" name="search" [(ngModel)] ='pesquisa'>
+                        <a type="submit" class="btn waves-effect waves-light" href="busca_titulo/{{usuario}}/{{pesquisa}}">Pesquisar</a>
+                    </form>
+                </div>
+
+                <div class="col-md-2">
+                    <a href="/carrinho/{{usuario}}"><img src="../../../assets/img/cart.png" style="width: 10%;" > Carrinho</a>
+                </div>
+
+                <div class="col-md-2">
+                    <a routerLink="/area-usuario/{{usuario}}"><img src="../../../assets/img/user.png" style="width: 10%;"> Usuário</a>
+                </div>
+
+                <div class="col-md-2 categoria-drop">
+                    <button type="button" name="drop">Categorias</button>
+                    <div class="drop-content" >
+                        <a *ngFor="let cat of categorias" href="categoria/{{usuario}}/{{cat.CategoryID}}" >{{cat.CategoryName}}</a>
+                    </div> 
+                </div>
+            </div>             
+        </nav>
+        
+    </div>
+
+ 
+  
+
+    
+   

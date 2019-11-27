@@ -1,0 +1,116 @@
+<div class="content" *ngIf="usuario ==0"> 
+
+    <!-- apresentação de qualquer livro, se clicar numa categoria, aparece os daquela categori, portanto é bom colocar um arquivo showBooks.php -->
+  <div class="container pt-5 ">
+
+      <div class="row">
+
+        <div class="col-md-6 mr-2" style="background-color: beige;">
+          <h3>Cadastre-se</h3>
+          <div class="row">
+            <div class="input-field col s4">
+                <input id="first_name" name="name" type="text" class="validate" [(ngModel)]="usuario_cadastro.name">
+                <label for="first_name">Nome</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="last_name" name="sobrenome" type="text" class="validate" [(ngModel)]="usuario_cadastro.sobrenome">
+                <label for="last_name">Sobrenome</label>
+            </div>
+            
+          </div>
+          <div class="row">
+            <div class="input-field col s4">
+              <input id="email" type="email" name="email" class="validate" [(ngModel)]="usuario_cadastro.email">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s4">
+              <input id="end" type="text" name="street" class="validate" [(ngModel)]="usuario_cadastro.street">
+              <label for="end">Endereço</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="cidade" type="text" name="city" class="validate" [(ngModel)]="usuario_cadastro.city">
+                <label for="cidade">Cidade</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s2">
+                <input id="estado" type="text" name="state" class="validate" [(ngModel)]="usuario_cadastro.state">
+                <label for="estado">Estado</label>
+            </div>
+            <div class="input-field col s2">
+                <input id="cep" type="number" name="zip" class="validate" [(ngModel)]="usuario_cadastro.zip">
+                <label for="cep">CEP</label>
+            </div>
+          </div>
+          <div class="row">
+              <a class="btn waves-effect waves-light" (click)="cadastra()">Cadastrar</a>
+          </div>
+        </div>
+
+        <div class="col-md-5 " style="background-color: beige;">
+          <h3>Login</h3>
+            <div class="row mt-5">
+              <div class="input-field col s4">
+                <input id="email_login" type="text" name="email_login" class="validate" [(ngModel)]="email"  >
+                <label for="email_login">Email</label>
+                
+                <a class="btn waves-effect waves-light" (click)="login()">Login</a>
+              </div>
+            </div>
+        </div>
+      </div> 
+
+  </div>
+</div>
+
+<div class="content" *ngIf="usuario != 0"> 
+
+  <!-- apresentação de qualquer livro, se clicar numa categoria, aparece os daquela categori, portanto é bom colocar um arquivo showBooks.php -->
+<div class="container pt-5 ">
+
+    <div class="row">
+
+      <div class="col-md-12 mr-2" style="background-color: beige;">
+        <h3>Dados do usuario</h3>
+        <div class="row">
+          <div class="input-field col s4">
+              <input id="first_name" name="name" type="text" class="validate" value="{{usuario_logado[0].name}}" disabled="">
+          </div>
+          <div class="input-field col s4">
+              <input id="last_name" name="sobrenome" type="text" class="validate" value="{{usuario_logado[0].sobrenome}}" disabled="">
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="input-field col s4">
+            <input id="email" type="email" name="email" class="validate" value="{{usuario_logado[0].email}}" disabled="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s4">
+            <input id="end" type="text" name="street" class="validate" value="{{usuario_logado[0].street}}" disabled="">
+            
+          </div>
+          <div class="input-field col s4">
+            <input id="cidade" type="text" name="city" class="validate" value="{{usuario_logado[0].city}}" disabled="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s2">
+              <input id="estado" type="text" name="state" class="validate" value="{{usuario_logado[0].state}}" disabled="">
+          </div>
+          <div class="input-field col s2">
+              <input id="cep" type="number" name="zip" class="validate" value="{{usuario_logado[0].zip}}" disabled="">
+          </div>
+        </div>
+        <div class="row">
+        </div>
+      </div>
+
+
+</div>
+
+</div>
+</div>
