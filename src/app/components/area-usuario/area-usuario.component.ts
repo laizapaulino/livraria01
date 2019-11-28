@@ -49,6 +49,7 @@ export class AreaUsuarioComponent implements OnInit {
    cadastra(){
     const req = this.httpClient.post("http://localhost:3000/cadastra_usuario/", this.usuario_cadastro).toPromise();
     this.usuario=this.usuario_cadastro.nome;
+    this.login2(this.usuario_cadastro.email)
     req.then((resposta) => {
       //chamar login
       this.resposta = resposta;
@@ -59,6 +60,19 @@ export class AreaUsuarioComponent implements OnInit {
 
    login(){
     const req = this.httpClient.get("http://localhost:3000/customer_email/"+this.email).toPromise();
+    req.then((resposta) => {
+      this.usuario_logado = resposta;
+      this.usuario = this.usuario_logado[0].id;
+      window.location.href = 'area-usuario/'+this.usuario;
+      console.log(this.usuario_logado[0].id);
+    }).catch((erro) => {
+      this.resposta = erro;
+    });
+
+   }
+
+   login2(email){
+    const req = this.httpClient.get("http://localhost:3000/customer_email/"+email).toPromise();
     req.then((resposta) => {
       this.usuario_logado = resposta;
       this.usuario = this.usuario_logado[0].id;

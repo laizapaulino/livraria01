@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { from } from 'rxjs';
 import { RetornoCategoriaComponent } from './components/retorno-categoria/retorno-categoria.component';
 import { ResultadoBuscaTituloComponent } from './components/resultado-busca-titulo/resultado-busca-titulo.component';
+import { SobreComponent } from './components/sobre/sobre.component';
 
 const routes: Routes = [
   { path: 'home/:usuario', component: HomeComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
 
   { path: 'carrinho/:usuario', component: CarrinhoComponent },
   { path: 'add-carrinho/:usuario/:isbn', component: CarrinhoComponent },
-  
+  { path: 'sobre/:usuario', component: SobreComponent },
+
   { path: 'area-usuario/:usuario', component: AreaUsuarioComponent },
   { path: 'informacao-livro/:usuario/:isbn', component: InformacaoLivroComponent },
   { path: 'categoria/:usuario/:cat', component: RetornoCategoriaComponent },

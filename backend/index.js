@@ -86,8 +86,11 @@ app.use('/', router);
         const quantidade = req.body.quantidade;
         const livro = req.body.livro;
         execSQLQuery(`INSERT INTO cart( isbn,quantidade) VALUES('${livro}','${quantidade}')`, res);
+        alert(res);
     });//localhost:3000/add/cart/l@email.com/1/0201433362
     
+    
+
     //router.post('/cadastra_usuario/:email/:name/:sobrenome/:street/:city/:state/:zip', (req, res) => {
     router.post('/cadastra_usuario/', (req, res) => {
   

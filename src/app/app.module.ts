@@ -16,6 +16,7 @@ import { StorageServiceModule} from 'angular-webstorage-service';
 import { StorageService } from './services/storage.service';
 import { RetornoCategoriaComponent } from './components/retorno-categoria/retorno-categoria.component';
 import { ResultadoBuscaTituloComponent } from './components/resultado-busca-titulo/resultado-busca-titulo.component';
+import { SobreComponent } from './components/sobre/sobre.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ResultadoBuscaTituloComponent } from './components/resultado-busca-titu
     InformacaoLivroComponent,
     RetornoCategoriaComponent,
     ResultadoBuscaTituloComponent,
+    SobreComponent,
   ],
   imports: [
     BrowserModule,
